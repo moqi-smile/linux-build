@@ -17,7 +17,9 @@ mkdir -p ~/work/project
 #创建工程目录
 
 # 安装交叉编译链
-if [ $(getconf LONG_BIT)="32" ]; then
+system="32"
+
+if [ $(getconf LONG_BIT) == ${system} ]; then
 echo "你的系统是 32 位的操作系统"
 wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux32-1.22.0-80-g6c4433a-5.2.0.tar.gz
 #获取32位的交叉编译链
